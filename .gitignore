@@ -1,0 +1,25 @@
+# Directorio de compilación de Maven
+target/
+
+# Configuraciones de IntelliJ IDEA
+.idea/
+*.iml
+
+# Configuraciones de VS Code
+.vscode/
+
+# Configuraciones de Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+
+# Archivos compilados, logs y paquetes comprimidos
+*.class
+*.log
+*.zip
+
+# Archivos temporales del sistema operativo
+.DS_Store
+.directory
+Thumbs.db

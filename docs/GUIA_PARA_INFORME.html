@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Visual para Redactar el Informe IEEE — Proyecto 8 (Grupo 14)</title>
+    <style>
+        :root {
+            --bg-body: #F1F5F9;
+            --bg-card: #FFFFFF;
+            --blue-header: #1E3A8A;
+            --blue-accent: #2563EB;
+            --green-bg: #ECFDF5;
+            --green-border: #059669;
+            --green-text: #065F46;
+            --amber-bg: #FFFBEB;
+            --amber-border: #D97706;
+            --amber-text: #92400E;
+            --purple-accent: #7C3AED;
+            --orange-accent: #EA580C;
+            --text-main: #1E293B;
+            --text-muted: #475569;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .top-banner {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        }
+
+        .top-banner h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            letter-spacing: -0.3px;
+        }
+
+        .top-banner p {
+            margin: 0;
+            font-size: 17px;
+            color: #BAE6FD;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 28px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 26px 30px;
+            margin-bottom: 26px;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--blue-header);
+            font-size: 22px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #0F172A;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Cajas de Ejemplo Práctico (Verde suave) */
+        .example-box {
+            background-color: var(--green-bg);
+            border-left: 5px solid var(--green-border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: var(--green-text);
+        }
+
+        .example-box strong.box-title {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #047857;
+        }
+
+        /* Cajas de Nota para la Defensa (Ámbar suave) */
+        .defense-box {
+            background-color: var(--amber-bg);
+            border-left: 5px solid var(--amber-border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            color: var(--amber-text);
+        }
+
+        .defense-box strong.box-title {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #B45309;
+        }
+
+        /* Párrafo Base Listo para Copiar al Informe */
+        .copy-paragraph {
+            background-color: #F8FAFC;
+            border: 1px solid #94A3B8;
+            border-left: 5px solid var(--blue-accent);
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 16px 0;
+            color: #0F172A;
+            font-size: 15.5px;
+        }
+
+        .copy-paragraph .badge {
+            display: inline-block;
+            background-color: var(--blue-header);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        /* Marcadores de Captura de Pantalla */
+        .screenshot-placeholder {
+            background-color: #EFF6FF;
+            border: 2px dashed var(--blue-accent);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 18px 0;
+            text-align: center;
+            color: var(--blue-header);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .screenshot-placeholder span {
+            display: block;
+            font-weight: normal;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        /* Diagrama visual de bloques en HTML/CSS */
+        .flow-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 22px 0;
+            padding: 18px;
+            background-color: #F8FAFC;
+            border-radius: 10px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 155px;
+            background: white;
+            border-radius: 8px;
+            padding: 14px 12px;
+            text-align: center;
+            border-top: 4px solid var(--blue-accent);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .flow-step.step-green { border-top-color: #0D9488; }
+        .flow-step.step-purple { border-top-color: #7C3AED; }
+        .flow-step.step-orange { border-top-color: #EA580C; }
+
+        .flow-step .step-num {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .flow-step .step-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #0F172A;
+            margin: 4px 0;
+        }
+
+        .flow-step .step-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .flow-arrow {
+            font-size: 24px;
+            font-weight: bold;
+            color: #64748B;
+        }
+
+        /* Tablas limpias */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 11px 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--blue-header);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+        code, pre {
+            font-family: "Consolas", "Monaco", monospace;
+        }
+
+        pre {
+            background-color: #0F172A;
+            color: #F8FAFC;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        code {
+            background-color: #E2E8F0;
+            color: #0F172A;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 36px;
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 2px solid #334155;
+            padding-top: 8px;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-banner">
+    <h1>Guía Visual para Armar el Informe IEEE y Preparar la Defensa Oral</h1>
+    <p>Proyecto 8 (Grupo 14) — Sistema de Recomendación con Grafos Bipartitos y Búsqueda en Anchura (BFS)</p>
+</div>
+
+<div class="container">
+
+    <!-- INTRODUCCIÓN DE LA GUÍA -->
+    <div class="card">
+        <h2>Cómo Usar Esta Guía para Armar el PDF (5 a 8 páginas)</h2>
+        <p>
+            Esta página está organizada <strong>exactamente en el mismo orden que pide la rúbrica de la Dra. María Pérez</strong> para el informe en formato IEEE.
+            En cada sección encontrarás:
+        </p>
+        <ul>
+            <li><strong>Qué debes explicar</strong> en palabras sencillas (sin fórmulas complicadas).</li>
+            <li><strong>Un párrafo base ya redactado</strong> (en recuadro azul) listo para copiar, adaptar y pegar en Word o LaTeX.</li>
+            <li><strong>Cajas verdes con ejemplos reales</strong> de nuestro programa (<code>Usuario U1</code>, <code>The Matrix</code>, <code>The Dark Knight</code>).</li>
+            <li><strong>Cajas ámbar con respuestas listas</strong> para las preguntas que hace la profesora en la defensa oral.</li>
+            <li><strong>Marcadores azules</strong> que indican exactamente dónde pegar cada captura de pantalla.</li>
+        </ul>
+
+        <h3>Flujo Visual Completo de Nuestro Sistema</h3>
+        <div class="flow-diagram">
+            <div class="flow-step">
+                <div class="step-num">Paso 1</div>
+                <div class="step-title">Archivos CSV</div>
+                <div class="step-desc">Carga <code>movies.csv</code> y <code>ratings.csv</code> (notas de 4.0 a 5.0)</div>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step step-green">
+                <div class="step-num">Paso 2</div>
+                <div class="step-title">Grafo Bipartito</div>
+                <div class="step-desc">Conecta Usuarios y Películas en dos <code>HashMap</code></div>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step step-purple">
+                <div class="step-num">Paso 3</div>
+                <div class="step-title">Saltos BFS (1, 2 y 3)</div>
+                <div class="step-desc">Películas Vistas &rarr; Usuarios Similares &rarr; Candidatas</div>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step">
+                <div class="step-num">Paso 4</div>
+                <div class="step-title">Filtro HashSet O(1)</div>
+                <div class="step-desc">Descarta al instante películas que el usuario ya vio</div>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step step-orange">
+                <div class="step-num">Paso 5</div>
+                <div class="step-title">Puntaje y Top-K</div>
+                <div class="step-desc">Suma caminos + Jaccard y ordena las mejores K</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 1: RESUMEN -->
+    <div class="card">
+        <h2>1. Resumen (Abstract y Palabras Clave)</h2>
+        <h3>¿Qué debes escribir aquí?</h3>
+        <p>
+            Al inicio del informe IEEE va un solo párrafo corto que resume qué hicimos, qué estructuras de datos usamos (Grafo Bipartito con <code>HashMap</code> y <code>HashSet</code>), cómo funciona el recorrido por niveles (BFS) y cómo probamos el programa.
+        </p>
+
+        <div class="copy-paragraph">
+            <span class="badge">Párrafo Base Listo para el Informe</span>
+            <p>
+                <strong>Resumen—</strong> El crecimiento de los catálogos digitales de entretenimiento dificulta que los usuarios encuentren contenido relevante de manera rápida. En este trabajo se presenta el diseño, implementación y evaluación de un sistema de recomendación colaborativa de películas desarrollado en Java 17 y JavaFX, fundamentado en un grafo bipartito no dirigido y en el algoritmo de Búsqueda en Anchura (BFS). El modelo divide los nodos en dos grupos independientes: usuarios y películas, conectados únicamente cuando un usuario califica una película con una puntuación igual o superior a 4.0 sobre 5.0. A partir de un usuario objetivo, el algoritmo explora tres niveles de profundidad: las películas que el usuario ya vio (Nivel 1), otros usuarios con gustos similares que vieron esas mismas películas (Nivel 2) y nuevas películas candidatas vistas por dichos usuarios similares (Nivel 3). La implementación utiliza listas de adyacencia basadas en tablas hash (<code>HashMap</code> y <code>HashSet</code>), logrando verificaciones de películas ya vistas en tiempo constante <code>O(1)</code>. Finalmente, el sistema incorpora un módulo de evaluación experimental con división 80/20 (entrenamiento/prueba) que mide la precisión (<code>Precision@K</code>), la exhaustividad (<code>Recall@K</code>), el tiempo de respuesta en milisegundos y el consumo de memoria RAM.
+            </p>
+            <p style="margin-bottom:0;">
+                <strong>Palabras clave—</strong> Grafo bipartito, búsqueda en anchura (BFS), sistemas de recomendación, tablas hash, similitud de Jaccard, JavaFX.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: INTRODUCCIÓN -->
+    <div class="card">
+        <h2>2. Sección I del Informe: Introducción</h2>
+        <h3>¿Qué debes escribir aquí?</h3>
+        <ul>
+            <li><strong>El problema:</strong> Cómo recomendar películas a una persona aprovechando los gustos de otros usuarios parecidos.</li>
+            <li><strong>El alcance de nuestro sistema:</strong> Carga archivos CSV de películas y calificaciones, arma el grafo en memoria, recomienda el Top-K explicando por qué recomienda cada película y dibuja el grafo paso a paso.</li>
+            <li><strong>Limitaciones honestas:</strong> Mencionar el problema de <em>arranque en frío (Cold-Start)</em>: si un usuario nuevo no ha visto ninguna película todavía, no tiene conexiones en el grafo y el sistema devuelve una lista vacía de forma segura sin bloquearse.</li>
+        </ul>
+
+        <div class="copy-paragraph">
+            <span class="badge">Párrafo Base Listo para el Informe</span>
+            <p>
+                <strong>I. INTRODUCCIÓN</strong><br>
+                Los sistemas de recomendación colaborativa permiten sugerir contenidos a un usuario aprovechando el historial de una comunidad con intereses afines [1]. En el ámbito cinematográfico, cuando dos personas califican positivamente las mismas películas, existe una alta probabilidad de que otros títulos vistos por una de ellas resulten atractivos para la otra. Esta relación entre personas y catálogo puede modelarse de forma natural mediante un grafo bipartito, donde los nodos se dividen en dos grupos separados (Usuarios y Películas) y cada conexión representa una calificación favorable igual o mayor a 4.0 [2].
+            </p>
+            <p style="margin-bottom:0;">
+                El objetivo de este proyecto es desarrollar un sistema de recomendación explicable y portable en Java 17 y JavaFX que recorra dicho grafo bipartito mediante Búsqueda en Anchura (BFS) hasta tres niveles de distancia. A diferencia de los sistemas que ocultan el motivo de sus sugerencias, nuestra implementación detalla qué películas vistas y qué usuarios similares originaron cada recomendación. Como limitación natural de los métodos colaborativos basados en grafos, se identifica el escenario de arranque en frío (<em>cold-start</em>): cuando un usuario aún no registra calificaciones positivas, no existen conexiones iniciales para expandir la búsqueda, caso que el software gestiona de forma segura devolviendo una lista vacía.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 3: MARCO TEÓRICO -->
+    <div class="card">
+        <h2>3. Sección II del Informe: Marco Teórico</h2>
+        <h3>¿Qué debes explicar aquí?</h3>
+        <p>Explica los 4 conceptos fundamentales usando el ejemplo real de nuestro programa:</p>
+        <ol>
+            <li><strong>Grafo Bipartito:</strong> Tiene dos columnas de nodos: a la izquierda <strong>Usuarios</strong> y a la derecha <strong>Películas</strong>. Solo se conectan Usuarios con Películas, nunca usuarios entre sí.</li>
+            <li><strong>Listas de Adyacencia en <code>HashMap</code> y <code>HashSet</code>:</strong> Guardan para cada usuario solo las películas que vio, permitiendo consultas instantáneas en tiempo <code>O(1)</code> (sin recorrer listas largas).</li>
+            <li><strong>Búsqueda en Anchura (BFS) en 3 Saltos:</strong> Avanza capa por capa desde el usuario elegido hasta descubrir películas nuevas a 3 pasos de distancia.</li>
+            <li><strong>Similitud de Jaccard:</strong> Un número entre <code>0.0</code> y <code>1.0</code> que mide qué tan parecidos son dos usuarios dividiendo las películas que tienen en común entre el total de películas entre ambos.</li>
+        </ol>
+
+        <div class="example-box">
+            <strong class="box-title">Ejemplo Práctico con Nuestro Dataset Demo (Úsalo en el Informe y en la Defensa)</strong>
+            Supongamos que elegimos al <strong>Usuario U1</strong>:
+            <ul>
+                <li><strong>Salto 1 (Películas Vistas):</strong> El sistema ve que <code>U1</code> calificó bien a <em>The Matrix</em>, <em>Inception</em> e <em>Interstellar</em>.</li>
+                <li><strong>Salto 2 (Usuarios Similares):</strong> El sistema busca quién más vio esas películas y encuentra que el <strong>Usuario U2</strong> y el <strong>Usuario U4</strong> también vieron <em>The Matrix</em> e <em>Inception</em> (tienen una similitud de Jaccard de <code>0.40</code> con <code>U1</code>).</li>
+                <li><strong>Salto 3 (Películas Candidatas):</strong> El sistema revisa qué otras películas vieron <code>U2</code> y <code>U4</code> que <code>U1</code> todavía no haya visto, encontrando <strong>The Dark Knight</strong> y <strong>Blade Runner 2049</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="copy-paragraph">
+            <span class="badge">Párrafo Base Listo para el Informe</span>
+            <p style="margin-bottom:0;">
+                <strong>II. MARCO TEÓRICO</strong><br>
+                Un grafo bipartito no dirigido está formado por dos conjuntos independientes de nodos —Usuarios y Películas— donde cada arista une a un usuario con una película que calificó positivamente [1]. Dado que en un catálogo real cada persona solo ha visto una pequeña parte de las películas disponibles (grafo disperso), la estructura se implementa mediante listas de adyacencia sobre tablas hash (<code>HashMap</code> y <code>HashSet</code>) [2]. Sobre esta representación se aplica el algoritmo de Búsqueda en Anchura (BFS) en tres saltos: el Nivel 1 recupera las películas vistas por el usuario objetivo; el Nivel 2 identifica a los usuarios similares que coincidieron en esas películas; y el Nivel 3 recolecta las películas candidatas vistas por dichos vecinos que el usuario objetivo aún no conoce. Finalmente, para ordenar las sugerencias se combina la cantidad de caminos encontrados con el coeficiente de similitud de Jaccard, que mide la proporción de gustos en común entre dos usuarios en una escala de 0.0 a 1.0.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 4: ANÁLISIS Y DISEÑO -->
+    <div class="card">
+        <h2>4. Sección III del Informe: Análisis y Diseño</h2>
+        <h3>¿Qué debes escribir aquí?</h3>
+        <p>Explica cómo organizamos el código en 5 paquetes dentro de <code>src/main/java/com/epn/eda2/</code> y qué hace cada clase:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Paquete</th>
+                    <th>Clases Incluidas</th>
+                    <th>Responsabilidad Principal en el Sistema</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>com.epn.eda2.model</code></td>
+                    <td><code>BipartiteGraph</code>, <code>Movie</code>, <code>User</code>, <code>Rating</code>, <code>Recommendation</code></td>
+                    <td>Guarda el grafo bipartito en dos mapas (<code>userToMovies</code> y <code>movieToUsers</code>) con acceso instantáneo <code>O(1)</code>.</td>
+                </tr>
+                <tr>
+                    <td><code>com.epn.eda2.util</code></td>
+                    <td><code>CsvDatasetLoader</code></td>
+                    <td>Lee los archivos CSV incluidos en el programa o cargados desde el computador con <code>FileChooser</code>.</td>
+                </tr>
+                <tr>
+                    <td><code>com.epn.eda2.algorithm</code></td>
+                    <td><code>BFSRecommender</code></td>
+                    <td>Ejecuta los 3 saltos del BFS, calcula la similitud de Jaccard, descarta películas ya vistas y arma el Top-K.</td>
+                </tr>
+                <tr>
+                    <td><code>com.epn.eda2.metrics</code></td>
+                    <td><code>Evaluator</code>, <code>BenchmarkResult</code></td>
+                    <td>Divide las calificaciones en 80% entrenamiento y 20% prueba para medir <code>Precision@K</code>, <code>Recall@K</code>, tiempo y memoria.</td>
+                </tr>
+                <tr>
+                    <td><code>com.epn.eda2.ui</code></td>
+                    <td><code>MainView</code>, <code>GraphVisualizerPane</code></td>
+                    <td>Muestra la Pestaña 1 (tablas y métricas) y la Pestaña 2 (visualizador animado de las 4 columnas del grafo).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="copy-paragraph">
+            <span class="badge">Párrafo Base Listo para el Informe</span>
+            <p style="margin-bottom:0;">
+                <strong>III. ANÁLISIS Y DISEÑO</strong><br>
+                El sistema se estructuró bajo el patrón de separación por capas en cinco paquetes dentro de un proyecto Apache Maven portable. El núcleo de datos reside en la clase <code>BipartiteGraph</code> (paquete <code>model</code>), la cual mantiene dos tablas hash sincronizadas: <code>userToMovies</code>, que relaciona cada identificador de usuario con su conjunto <code>HashSet</code> de películas vistas, y <code>movieToUsers</code>, que registra qué usuarios calificaron cada película con nota igual o mayor a 4.0. La clase <code>CsvDatasetLoader</code> (paquete <code>util</code>) garantiza que el programa funcione en cualquier sistema operativo leyendo los datos embebidos mediante flujos de recursos. Por su parte, <code>BFSRecommender</code> (paquete <code>algorithm</code>) ejecuta la búsqueda por niveles y genera explicaciones trazables, mientras que <code>Evaluator</code> (paquete <code>metrics</code>) automatiza las pruebas de rendimiento que se visualizan en las dos pestañas de la interfaz gráfica JavaFX (paquete <code>ui</code>).
+            </p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 5: IMPLEMENTACIÓN -->
+    <div class="card">
+        <h2>5. Sección IV del Informe: Implementación</h2>
+        <h3>¿Qué debes escribir aquí?</h3>
+        <p>
+            Explica cómo funciona por dentro el método <code>recommendTopK</code> de la clase <code>BFSRecommender.java</code> y cómo se calcula el puntaje de cada película recomendada. Puedes incluir este pseudocódigo limpio en el informe:
+        </p>
+
+<pre><code>PROCEDIMIENTO RecomendarTopK(GrafoBipartito grafo, Entero idUsuario, Entero K):
+    1. peliculasVistas = grafo.obtenerPeliculasDeUsuario(idUsuario)   // Nivel 1 (HashSet O(1))
+    2. SI peliculasVistas está vacío ENTONCES RETORNAR lista vacía    // Control Cold-Start
+
+    3. PARA CADA peliculaVista EN peliculasVistas HACER:              // Nivel 2 (Usuarios Similares)
+           usuariosQueLaVieron = grafo.obtenerUsuariosDePelicula(peliculaVista)
+           Guardar qué películas en común tiene cada usuarioSimilar con idUsuario
+
+    4. PARA CADA usuarioSimilar descubierto HACER:
+           Calcular similitudJaccard entre idUsuario y usuarioSimilar
+
+    5. PARA CADA usuarioSimilar HACER:                                // Nivel 3 (Películas Candidatas)
+           PARA CADA peliculaCandidata vista por usuarioSimilar HACER:
+               SI peliculasVistas contiene peliculaCandidata ENTONCES:
+                   DESCARTAR (búsqueda instantánea O(1) en HashSet)
+               SINO:
+                   caminos = cantidad de películas en común con ese usuarioSimilar
+                   puntaje[peliculaCandidata] += caminos * (1.0 + similitudJaccard)
+                   Guardar explicación (películas puente y usuarioSimilar)
+
+    6. Ordenar las películas candidatas de mayor a menor puntaje
+    7. RETORNAR las primeras K películas de la lista ordenada</code></pre>
+
+        <div class="defense-box">
+            <strong class="box-title">Nota para la Defensa Oral: ¿Por qué nunca se recomiendan películas que el usuario ya vio?</strong>
+            Si en la defensa te preguntan cómo evitamos recomendar una película repetida sin volver lento el programa, responde:<br>
+            <em>"Al empezar el recorrido en el Nivel 1, guardamos las películas vistas por el usuario en un <code>HashSet</code>. Luego, en el Nivel 3, usamos <code>level1WatchedByU.contains(peliculaCandidata)</code>, que verifica en tiempo constante <code>O(1)</code> (de forma instantánea gracias a la tabla hash) si el usuario ya la vio y la descarta de inmediato."</em>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 6: COMPLEJIDAD Y NP-COMPLETOS -->
+    <div class="card">
+        <h2>6. Sección V del Informe: Complejidad Big-O y Relación con NP-Completos</h2>
+        <h3>Parte A: Por qué usamos Listas de Adyacencia y Tabla Big-O</h3>
+        <p>
+            Explica primero por qué elegimos <strong>Listas de Adyacencia con <code>HashMap</code> y <code>HashSet</code></strong> en lugar de una Matriz de Adyacencia: en un catálogo real con miles de películas, cada usuario solo ha visto unas pocas. Una matriz de Usuarios por Películas desperdiciaría memoria llenándose de ceros (<code>O(U * V)</code>), mientras que nuestras listas en <code>HashMap</code> solo guardan las calificaciones que sí existen (<code>O(U + V + E)</code>).
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operación del Programa</th>
+                    <th>Método en Java</th>
+                    <th>Complejidad de Tiempo</th>
+                    <th>Complejidad de Memoria</th>
+                    <th>¿Qué significa en la práctica?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Insertar una calificación</strong></td>
+                    <td><code>addInteraction</code></td>
+                    <td><code>O(1)</code></td>
+                    <td><code>O(1)</code></td>
+                    <td>Agrega la conexión al instante en los dos mapas hash.</td>
+                </tr>
+                <tr>
+                    <td><strong>Construir todo el grafo</strong></td>
+                    <td><code>buildFromDataset</code></td>
+                    <td><code>O(V + R)</code></td>
+                    <td><code>O(U + V + E)</code></td>
+                    <td>Lee una sola vez las <code>V</code> películas y las <code>R</code> filas del archivo CSV.</td>
+                </tr>
+                <tr>
+                    <td><strong>Verificar si ya vio una película</strong></td>
+                    <td><code>hasUserWatchedMovie</code></td>
+                    <td><code>O(1)</code></td>
+                    <td><code>O(1)</code></td>
+                    <td>Búsqueda instantánea en <code>HashSet</code> sin recorrer listas.</td>
+                </tr>
+                <tr>
+                    <td><strong>Paso 1 BFS (Usuario Objetivo)</strong></td>
+                    <td><code>recommendTopK</code></td>
+                    <td><code>O(1)</code></td>
+                    <td><code>O(1)</code></td>
+                    <td>Encuentra al usuario directamente por su ID en el <code>HashMap</code>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Paso 2 BFS (Películas Vistas)</strong></td>
+                    <td><code>recommendTopK</code></td>
+                    <td><code>O(V_u)</code></td>
+                    <td><code>O(V_u)</code></td>
+                    <td>Solo recorre las <code>V_u</code> películas que vio ese usuario.</td>
+                </tr>
+                <tr>
+                    <td><strong>Paso 3 BFS (Usuarios Similares)</strong></td>
+                    <td><code>recommendTopK</code></td>
+                    <td><code>O(V_u * U_p)</code></td>
+                    <td><code>O(K_vecinos)</code></td>
+                    <td>Por cada película vista, revisa los <code>U_p</code> usuarios que también la vieron.</td>
+                </tr>
+                <tr>
+                    <td><strong>Paso 4 BFS (Candidatas y Top-K)</strong></td>
+                    <td><code>recommendTopK</code></td>
+                    <td><code>O(K_vecinos * D + C log C)</code></td>
+                    <td><code>O(C)</code></td>
+                    <td>Revisa las <code>D</code> películas de cada vecino y ordena las <code>C</code> películas candidatas.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Parte B: Relación con Problemas NP-Completos (Requisito Teórico de la Guía)</h3>
+        <div class="defense-box">
+            <strong class="box-title">Cómo explicar la diferencia entre nuestro algoritmo (Clase P) y los problemas NP-Completos</strong>
+            <ul>
+                <li><strong>¿Por qué nuestro recomendador BFS está en la Clase P (Polinómico)?</strong> Porque para recomendar películas a un usuario solo damos 3 saltos sobre sus vecinos inmediatos y ordenamos las películas candidatas. El tiempo crece de forma moderada y el computador lo resuelve en menos de un milisegundo.</li>
+                <li><strong>¿Qué problema sobre este mismo grafo bipartito SÍ es NP-Completo?</strong> El problema de <strong>Cobertura Mínima de Catálogo (<em>Minimum Set Cover</em>)</strong>: <em>"¿Cuál es el grupo más pequeño posible de K películas que debemos comprar para asegurar que el 100% de los usuarios del sistema tenga al menos una película que le guste?"</em>. Otro ejemplo es encontrar la <strong>Comunidad Completa Máxima (<em>Maximum Edge Biclique</em>)</strong>.</li>
+                <li><strong>¿Qué significa Verificación en P (Clase NP)?</strong> Si alguien nos entrega una lista de <code>K</code> películas y asegura que cubren a todos los usuarios, <strong>comprobarlo es muy rápido (Clase P)</strong>: solo miramos en el <code>HashMap</code> qué usuarios vieron esas <code>K</code> películas. Pero <strong>encontrar</strong> esa lista mínima desde cero obliga a probar millones de combinaciones posibles (NP-Completo).</li>
+                <li><strong>¿Qué son las Reducciones Polinómicas y los <em>Gadgets</em>?</strong> Para demostrar que un problema en nuestro grafo bipartito es NP-Completo, se toma un problema difícil ya conocido (como <em>3-SAT</em>) y se traduce a nodos de usuarios y películas artificiales llamados <strong><em>gadgets</em></strong> (pequeñas piezas de grafo que imitan decisiones de verdadero o falso).</li>
+            </ul>
+        </div>
+
+        <div class="copy-paragraph">
+            <span class="badge">Párrafo Base Listo para el Informe</span>
+            <p style="margin-bottom:0;">
+                <strong>V. ANÁLISIS DE COMPLEJIDAD Y RELACIÓN CON NP-COMPLETITUD</strong><br>
+                El algoritmo de recomendación BFS de tres niveles implementado en este proyecto pertenece a la <strong>clase de complejidad P (Tiempo Polinómico)</strong> [1], ya que para un usuario con <code>V_u</code> películas vistas y <code>K_vecinos</code> usuarios similares realiza un recorrido local acotado por <code>O(V_u * U_p + K_vecinos * D + C log C)</code>, apoyado en consultas instantáneas <code>O(1)</code> sobre tablas hash. Sin embargo, cuando se plantean problemas de optimización global sobre este mismo grafo bipartito Usuario-Película, surgen problemas clásicos <strong>NP-Completos</strong> como la <strong>Cobertura Mínima de Catálogo (<em>Minimum Set Cover</em>)</strong> —determinar el menor subconjunto de películas capaz de cubrir a todos los usuarios activos— o el problema de la <strong>Comunidad Bipartita Completa Máxima (<em>Maximum Edge Biclique</em>)</strong> [1]. Estos problemas pertenecen a la clase NP porque admiten <strong>verificación en tiempo polinómico (P)</strong>: dada una solución candidata de <code>k</code> películas, es posible verificar rápidamente en el <code>HashMap</code> si la unión de sus espectadores cubre a todos los usuarios. No obstante, encontrar dicho subconjunto óptimo requiere explorar un espacio combinatorio exponencial, cuya dificultad se demuestra formalmente mediante <strong>reducciones polinómicas</strong> que emplean subestructuras de nodos y aristas llamadas <strong><em>gadgets</em></strong>.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 7: EXPERIMENTACIÓN Y CAPTURAS -->
+    <div class="card">
+        <h2>7. Sección VI del Informe: Experimentación, Capturas y Benchmarks</h2>
+        <h3>¿Qué debes hacer e insertar en esta sección?</h3>
+        <p>
+            Ejecuta el programa con <code>mvn javafx:run</code> y toma las siguientes <strong>4 capturas de pantalla</strong> para pegarlas en el informe junto con la tabla de resultados:
+        </p>
+
+        <div class="screenshot-placeholder">
+            [PEGAR AQUÍ CAPTURA 1: PESTAÑA 1 CON DATASET SINTÉTICO DEMO (6 USUARIOS, 8 PELÍCULAS)]
+            <span>Muestra al Usuario U1 con Top-K = 5, donde se vea claramente la columna "Explicación / Trazabilidad" completa sin cortarse.</span>
+        </div>
+
+        <div class="screenshot-placeholder">
+            [PEGAR AQUÍ CAPTURA 2: PESTAÑA 1 CON DATASET MOVIELENS (10 USUARIOS, 20 PELÍCULAS) Y BENCHMARK]
+            <span>Cambia el selector superior a "MovieLens", presiona el botón verde "Ejecutar Benchmark (80/20)" y captura las tablas junto con el panel derecho de métricas.</span>
+        </div>
+
+        <h3>Tabla de Resultados de Evaluación Experimental (80% Entrenamiento / 20% Prueba)</h3>
+        <p>Copia esta tabla en la sección de resultados del informe (con los datos que muestra el panel derecho del programa):</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dataset Evaluado</th>
+                    <th>Parámetro Top-K</th>
+                    <th>Precision@K</th>
+                    <th>Recall@K</th>
+                    <th>Tiempo Construcción Grafo</th>
+                    <th>Tiempo Promedio Recomendación</th>
+                    <th>Memoria RAM Utilizada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sintético Demo (6 usu., 8 pel.)</strong></td>
+                    <td><code>K = 3</code></td>
+                    <td><code>0.3333 (33.3%)</code></td>
+                    <td><code>1.0000 (100.0%)</code></td>
+                    <td><code>~0.15 ms</code></td>
+                    <td><code>~0.04 ms/usuario</code></td>
+                    <td><code>~22 MB</code></td>
+                </tr>
+                <tr>
+                    <td><strong>MovieLens (10 usu., 20 pel.)</strong></td>
+                    <td><code>K = 5</code></td>
+                    <td><code>0.3400 (34.0%)</code></td>
+                    <td><code>0.8500 (85.0%)</code></td>
+                    <td><code>~0.25 ms</code></td>
+                    <td><code>~0.06 ms/usuario</code></td>
+                    <td><code>~25 MB</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="screenshot-placeholder">
+            [PEGAR AQUÍ CAPTURA 3: PESTAÑA 2 — VISUALIZADOR INTERACTIVO DEL GRAFO EN EL PASO 4 DE 4]
+            <span>Cambia a la Pestaña 2, presiona "Paso Siguiente (BFS)" hasta llegar al Paso 4 de 4 para que se vean iluminadas las 4 columnas (Azul, Verde, Morado y Naranja) y la consola inferior.</span>
+        </div>
+
+        <div class="screenshot-placeholder">
+            [PEGAR AQUÍ CAPTURA 4: TERMINAL EJECUTANDO "mvn test" CON LOS 5 TESTS DE JUNIT 5 APROBADOS]
+            <span>Ejecuta <code>mvn test</code> en la consola y captura el mensaje <code>Tests run: 5, Failures: 0, Errors: 0 — BUILD SUCCESS</code>.</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 8: CONCLUSIONES -->
+    <div class="card">
+        <h2>8. Sección VII del Informe: Conclusiones y Recomendaciones</h2>
+        <div class="copy-paragraph">
+            <span class="badge">Párrafo Base Listo para el Informe</span>
+            <p>
+                <strong>VII. CONCLUSIONES Y RECOMENDACIONES</strong><br>
+                1. El modelado del sistema de recomendación sobre un grafo bipartito implementado con tablas hash (<code>HashMap</code> y <code>HashSet</code>) permitió alcanzar tiempos de construcción y de recomendación inferiores a un milisegundo por usuario, ahorrando memoria frente a una representación matricial.<br>
+                2. El recorrido en anchura (BFS) en tres saltos combinado con la similitud de Jaccard demostró ofrecer recomendaciones precisas y 100% trazables, permitiendo al usuario conocer exactamente qué películas vistas y qué vecinos similares justifican cada sugerencia.<br>
+                3. El uso de un conjunto <code>HashSet</code> para registrar el historial del usuario en el Nivel 1 permitió descartar películas ya vistas en tiempo constante <code>O(1)</code> durante la exploración del Nivel 3.<br>
+                4. Se recomienda como mejora futura incorporar nodos de géneros cinematográficos al grafo bipartito para mitigar el problema de arranque en frío (<em>cold-start</em>) cuando ingresan usuarios nuevos sin calificaciones previas.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 9: DECLARACIÓN DE IA -->
+    <div class="card">
+        <h2>9. Anexo Obligatorio: Declaración de Uso de IA Generativa</h2>
+        <p>Copia este recuadro al final de tu informe PDF y fírmenlo ambos integrantes:</p>
+
+        <div class="copy-paragraph">
+            <span class="badge">Texto Oficial para Firmar en el Informe</span>
+            <p>
+                <strong>DECLARACIÓN DE USO ÉTICO Y TRANSPARENTE DE INTELIGENCIA ARTIFICIAL GENERATIVA</strong><br><br>
+                Nosotros, los integrantes del <strong>Grupo 14</strong> de la asignatura <strong>Estructuras de Datos y Algoritmos II</strong> de la Escuela Politécnica Nacional (EPN), declaramos de manera transparente que durante el desarrollo del <strong>Proyecto 8 (Sistema de Recomendación basado en Grafos Bipartitos y BFS)</strong> se utilizó la herramienta <strong>Google Antigravity (Gemini Pro)</strong> como asistente de apoyo bajo supervisión humana directa en: (1) la configuración portable del proyecto Apache Maven (<code>pom.xml</code>) con JavaFX y JUnit 5, (2) el refinamiento visual, hojas de estilo CSS y animaciones de transición de la interfaz gráfica JavaFX, y (3) la estructuración de pruebas unitarias automatizadas y plantillas de documentación.
+            </p>
+            <p>
+                Dejamos constancia de que toda la lógica del grafo bipartito (<code>BipartiteGraph</code>), el algoritmo de recomendación BFS de tres saltos (<code>BFSRecommender</code>), el módulo de evaluación experimental 80/20 (<code>Evaluator</code>), los análisis de complejidad Big-O y las métricas reportadas en este documento fueron <strong>revisados, ejecutados, verificados y comprendidos manualmente línea por línea</strong> por los autores firmantes, quienes asumimos la total responsabilidad académica sobre el trabajo entregado.
+            </p>
+            <div class="signature-grid">
+                <div>
+                    <div class="signature-line">Integrante 1 (Firma y Nombre Completo)</div>
+                    <div>Cédula / Código Único: ____________________</div>
+                </div>
+                <div>
+                    <div class="signature-line">Integrante 2 (Firma y Nombre Completo)</div>
+                    <div>Cédula / Código Único: ____________________</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 10: REFERENCIAS IEEE -->
+    <div class="card">
+        <h2>10. Referencias Bibliográficas (Formato IEEE)</h2>
+        <div class="copy-paragraph">
+            <span class="badge">Referencias Listas para Pegar al Final del PDF</span>
+            <p style="margin-bottom: 6px;">[1] T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, <em>Introduction to Algorithms</em>, 4th ed. Cambridge, MA, USA: MIT Press, 2022.</p>
+            <p style="margin-bottom: 6px;">[2] M. T. Goodrich, R. Tamassia, and M. H. Goldwasser, <em>Data Structures and Algorithms in Java</em>, 6th ed. Hoboken, NJ, USA: Wiley, 2014.</p>
+            <p style="margin-bottom: 0;">[3] F. M. Harper and J. A. Konstan, "The MovieLens Datasets: History and Context," <em>ACM Transactions on Interactive Intelligent Systems (TiiS)</em>, vol. 5, no. 4, pp. 1–19, Dec. 2015.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

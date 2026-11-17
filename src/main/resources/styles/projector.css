@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Estilos Globales Optimizados para Proyector (Defensa Oral Universitaria)
+   Paleta:
+   - Usuario Objetivo:     #2563EB (Azul)
+   - Películas Vistas:     #0D9488 (Verde Esmeralda)
+   - Usuarios Similares:   #7C3AED (Morado)
+   - Recomendaciones:      #EA580C (Naranja)
+   - Fondo General:        #F8FAFC
+   ========================================================================== */
+
+.root {
+    -fx-font-family: "System", "Segoe UI", "Roboto", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #F8FAFC;
+}
+
+.label {
+    -fx-font-size: 14px;
+}
+
+.section-header {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-padding: 8px 16px;
+}
+
+.combo-box, .spinner {
+    -fx-font-size: 14px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+/* Pestañas superiores grandes y legibles */
+.tab-pane .tab-header-area .tab {
+    -fx-padding: 8px 18px;
+    -fx-background-radius: 8px 8px 0 0;
+}
+
+.tab-pane .tab-header-area .tab .tab-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+/* Tablas optimizadas para lectura en proyector */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #CBD5E1;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 8, 0, 0, 2);
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+    -fx-padding: 6px 4px;
+}
+
+.table-row-cell {
+    -fx-font-size: 14px;
+}
+
+.table-cell {
+    -fx-font-size: 14px;
+    -fx-padding: 6px 8px;
+    -fx-text-fill: #1E293B;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+/* Tooltips grandes para defensa oral */
+.tooltip {
+    -fx-font-size: 14px;
+    -fx-background-color: #0F172A;
+    -fx-text-fill: #F8FAFC;
+    -fx-padding: 10px 14px;
+    -fx-background-radius: 8px;
+}
+
+/* Tarjetas contenedoras con bordes redondeados de 8px y sombra sutil */
+.card-pane {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.07), 10, 0, 0, 2);
+}
