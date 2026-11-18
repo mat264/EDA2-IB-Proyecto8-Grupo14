@@ -1,0 +1,40 @@
+INSTRUCCIONES-EJECUCION
+
+1. En Visual Studio Code (VS Code)
+
+(Requisito: tener instalada la extensión Extension Pack for Java de Microsoft).
+
+Abre VS Code y ve a File → Open Folder... (Abrir carpeta).
+Selecciona la carpeta descomprimida del proyecto (donde está el pom.xml) y dale a Aceptar.
+Espera unos segundos a que VS Code detecte el pom.xml y descargue las librerías automáticamente (abajo a la derecha verás que carga el proyecto Java).
+Para ejecutar el programa tienes 2 formas:
+Forma A (Con un clic — Recomendada):
+En el panel izquierdo abre Launcher.java (src/main/java/com/epn/eda2/Launcher.java).
+Haz clic en el botón Run que aparece justo encima de public static void main(String[] args) (o clic derecho → Run Java). (Importante: ejecuta siempre Launcher.java cuando uses el botón Run del IDE, porque evita el error de módulos de JavaFX).
+Forma B (Desde la terminal integrada de VS Code): Presiona Ctrl + ` (o menú Terminal → New Terminal) y escribe:
+En Windows: .\mvnw.cmd javafx:run
+En Linux / macOS: ./mvnw javafx:run
+2. En Eclipse IDE
+Abre Eclipse y ve al menú superior: File → Import...
+Despliega la carpeta Maven, selecciona Existing Maven Projects y haz clic en Next.
+En Root Directory, haz clic en Browse... y selecciona la carpeta descomprimida del proyecto.
+Verás que en la lista aparece marcado /pom.xml (com.epn.eda2:ProyectoIB-Grupo14:1.0.0:jar). Haz clic en Finish.
+Espera unos segundos a que la barra inferior derecha de Eclipse ("Importing Maven projects") termine al 100%.
+Para ejecutar la interfaz gráfica:
+En el Package Explorer (izquierda), despliega src/main/java → paquete com.epn.eda2.
+Haz clic derecho sobre Launcher.java → Run As → 1 Java Application.
+Se abrirá de inmediato la ventana de JavaFX.
+Para correr las 5 pruebas de JUnit 5 en Eclipse:
+Despliega src/test/java → paquete com.epn.eda2.
+Haz clic derecho sobre RecommenderTest.java → Run As → 1 JUnit Test.
+3. Desde cualquier Terminal (Sin abrir ningún IDE ni tener Maven instalado)
+
+Gracias a que incluiste mvnw y mvnw.cmd en el repositorio, cualquier persona que solo tenga Java 17+ instalado puede abrir una terminal dentro de la carpeta descomprimida y ejecutar:
+
+En Windows (PowerShell o CMD):
+
+powershell
+# Ejecutar las 5 pruebas unitarias
+.\mvnw.cmd test
+# Abrir la aplicación gráfica JavaFX
+.\mvnw.cmd javafx:run
